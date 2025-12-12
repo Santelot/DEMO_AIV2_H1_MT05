@@ -1,0 +1,733 @@
+/* Define CSS Variables (Custom Properties) */
+:root {
+    --primary-color: #00a3a3;
+    --secondary-color: #e0f2f1;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --light-gray: #ddd;
+    --dialogue-assistant: #e0f7fa;
+    --dialogue-user: #f0f0f0;
+
+    /* Dark Mode Colors */
+    --dark-primary-color: #007979; /* Verde azulado oscuro */
+    --dark-secondary-color: #005050;
+    --dark-background-color: #121212;
+    --dark-text-color: #eee;
+    --dark-light-gray: #444;
+    --dark-dialogue-assistant: #263238;
+    --dark-dialogue-user: #37474f;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1.1rem; /* Increased base font size */
+}
+
+/* HEADER - Responsive adjustments for mobile first */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column; /* Apila el título y los widgets en móvil */
+    align-items: center; /* Centra los ítems apilados */
+    justify-content: center; /* Centra el contenido si hay espacio */
+    gap: 1rem; /* Espacio entre los elementos */
+}
+
+header h1 {
+    font-size: 1.75em;
+    margin: 0;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el título en móvil */
+    text-align: center;
+    width: 100%; /* Asegura que el título ocupe todo el ancho disponible */
+}
+
+/* Asumiendo que el ícono es ahora un <span> con texto o un <i> de Font Awesome */
+header h1 .book-icon {
+    margin-right: 0.5rem;
+    font-size: 1.2em; /* Ajustado para que se vea bien con el texto */
+}
+
+.header-widgets {
+    display: flex;
+    flex-direction: column; /* Apila el timer y el theme toggle en móvil */
+    gap: 15px; /* Espacio entre los widgets */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    align-items: center; /* Centra los widgets apilados */
+}
+
+.timer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el timer y sus botones */
+    gap: 10px;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.75rem 1rem;
+    border-radius: 15px;
+    background-color: rgba(0,0,0, 0.2);
+    width: fit-content; /* Se ajusta al contenido */
+}
+
+.timer-container button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.timer-container button:hover {
+    background-color: #b2dfdb;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el toggle */
+}
+
+.theme-toggle i {
+    margin: 0 0.5rem;
+    color: white;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Default background for unchecked */
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white; /* The circular knob */
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--primary-color); /* Usar primary color para consistencia */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* MAIN LAYOUT - Mobile First: Sidebar y Content apilados */
+.main-container {
+    display: flex;
+    flex-direction: column; /* Sidebar y Main Content apilados en móvil */
+    min-height: calc(100vh - 6rem); /* Subtract header height */
+}
+
+/* ASIDE (Activity List) - Mobile First */
+aside.activity-list {
+    width: 100%; /* Ocupa todo el ancho en móvil */
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-right: none; /* Sin borde a la derecha en móvil */
+    border-bottom: 1px solid var(--light-gray); /* Añade un borde inferior */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+aside.activity-list h2 {
+    font-size: 1.25em;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    text-align: center; /* Centra el título de actividades en móvil */
+}
+
+aside.activity-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Los números se distribuyen horizontalmente */
+    flex-wrap: wrap; /* Permite que los números se envuelvan */
+    justify-content: center; /* Centra los números horizontalmente */
+    gap: 0.75rem; /* Espacio entre los números */
+}
+
+aside.activity-list li {
+    margin-bottom: 0; /* Ya no es necesario con gap */
+}
+
+aside.activity-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em; /* Tamaño para los números */
+    width: auto;
+    padding: 0.5rem 1.2rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.2s ease;
+}
+/* Estilo específico para el enlace "De un Vistazo" si es un ícono o texto corto */
+aside.activity-list a[href="#activity-0"] {
+    font-size: 1.3em; /* Ligeramente más pequeño si es un ícono */
+    padding: 0.6rem 1rem; /* Ajustar padding */
+}
+
+
+aside.activity-list a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-info {
+    margin-top: 1.5rem; /* Más espacio para el texto informativo */
+    font-size: 0.8em;
+    color: #666;
+    padding: 0 0.5rem;
+}
+
+.sidebar-info p {
+    margin-bottom: 0.5rem;
+    text-align: center; /* Centra el texto informativo */
+}
+
+/* MAIN CONTENT */
+main.content {
+    flex: 1;
+    padding: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-y: auto;
+}
+
+.progress-bar {
+    background-color: var(--light-gray);
+    height: 0.7rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: var(--primary-color);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 5px;
+}
+
+/* Toggle Dialogues Button */
+#toggle-dialogues {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+    margin-bottom: 1.5rem;
+    display: block; /* Asegura que el botón ocupe su propia línea */
+    width: fit-content; /* Se ajusta al contenido */
+    margin-left: auto; /* Centra el botón */
+    margin-right: auto; /* Centra el botón */
+}
+
+#toggle-dialogues:hover {
+    background-color: var(--dark-primary-color);
+}
+
+/* Activity Cards */
+.activity-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    transition: opacity 0.333s ease;
+    opacity: 0; /* Initially set opacity to 0 */
+    position: absolute; /* Needed for the fade effect with display: block/none */
+    width: calc(100% - 2rem); /* Set width to container width minus padding */
+}
+
+.activity-card.active {
+    display: block;
+    opacity: 1;
+    position: relative; /* Reset positioning for active card */
+}
+
+.activity-card > h2 {
+    display: flex; /* Para alinear el ícono con el texto del título */
+    align-items: center;
+    font-size: 1.5em; /* Tamaño del título de la actividad */
+    margin-bottom: 0.5rem; /* Reducido para acercar el subtítulo */
+}
+
+.activity-card > h2 .book-icon { /* Ícono dentro del h2 de la activity card */
+    margin-right: 0.5rem;
+    font-size: 1em; /* Relativo al h2 */
+}
+
+.activity-card > p {
+    color: #666; /* Activity Description Style */
+    font-size: 1em; /* Adjusted size for activity descriptions */
+    margin-bottom: 1rem; /* Espacio después de la descripción general de la actividad */
+}
+
+
+/* Steps and Step Cards */
+.steps {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna por defecto (móvil) */
+    gap: 1rem;
+}
+
+.step-card {
+    background-color: var(--secondary-color);
+    border-radius: 6px;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    transition: background-color 0.3s ease;
+    display: grid;
+    grid-template-columns: 1fr; /* Contenido y diálogo apilados en móvil */
+}
+
+.step-content {
+    margin-bottom: 0.75rem;
+}
+
+.step-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.step-card p {
+    color: #666;
+    font-size: 1em;
+}
+
+/* Collapsible and Dialogues */
+.collapsible {
+    margin-top: 0.75rem;
+}
+
+.collapsible-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+    margin: 0 auto; /* Centrar el botón */
+    display: block; /* Para que margin:auto funcione */
+}
+
+.collapsible-button:hover {
+    background-color: var(--dark-primary-color);
+}
+
+.collapsible-content {
+    padding: 0.75rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    display: none; /* Hidden by default */
+}
+
+.dialogue {
+    font-style: italic;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.dialogue.assistant {
+    background-color: var(--dialogue-assistant);
+    text-align: left;
+    color: var(--text-color);
+}
+
+.dialogue.user {
+    background-color: var(--dialogue-user);
+    text-align: right;
+    color: var(--text-color);
+}
+
+/* Estilos específicos para "De un Vistazo" */
+.overview-subtitle {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: -0.2rem; /* Ajusta el espacio después del título h2 */
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.overview-table-container {
+    margin-top: 1rem;
+    overflow-x: auto; /* Para tablas anchas en móviles */
+}
+
+.overview-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.overview-table-container th,
+.overview-table-container td {
+    border: 1px solid var(--light-gray);
+    padding: 0.75rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.overview-table-container th {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.overview-table-container ul,
+.overview-table-container ol {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+}
+
+.overview-table-container li {
+    margin-bottom: 0.3rem;
+}
+
+.overview-table-container strong { /* Estilo general para los "strong" dentro de la tabla */
+    font-weight: 500;
+}
+
+.overview-table-container td > strong { /* Para los títulos de sección como "Objetivos:", "Tácticas:" */
+    color: var(--primary-color);
+    display: block; 
+    margin-bottom: 0.3rem;
+    font-weight: 700; 
+}
+
+
+.overview-table-container .tactic-highlight strong {
+    color: #d32f2f; 
+    font-weight: bold; 
+}
+
+.overview-table-container a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Asegúrate que el contenido de "De un vistazo" no tenga steps o collapsible heredados */
+#activity-0 .steps,
+#activity-0 .collapsible {
+    display: none !important; 
+}
+
+
+/* DARK MODE STYLES - Aplicados sobre los estilos base (mobile) */
+body.dark-mode {
+    background-color: var(--dark-background-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-mode header {
+    background-color: var(--dark-primary-color);
+}
+
+body.dark-mode .activity-card {
+    background-color: var(--dark-light-gray); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .activity-card h2,
+body.dark-mode .step-card h3 {
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .step-card {
+    background-color: var(--dark-secondary-color); 
+}
+
+body.dark-mode .collapsible-content {
+    border-color: var(--dark-text-color); 
+}
+
+body.dark-mode .dialogue.assistant {
+    background-color: var(--dark-dialogue-assistant);
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .dialogue.user {
+    background-color: var(--dark-dialogue-user);
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .progress-bar {
+    background-color: var(--dark-light-gray);
+}
+
+body.dark-mode aside.activity-list {
+    background-color: var(--dark-secondary-color);
+    border-color: var(--dark-light-gray);
+}
+
+body.dark-mode aside.activity-list h2 {
+    color: var(--dark-text-color);
+}
+
+body.dark-mode aside.activity-list a {
+    color: var(--dark-text-color);
+    background-color: var(--dark-primary-color); 
+}
+body.dark-mode aside.activity-list a[href="#activity-0"] {
+    /* Mantener consistencia o ajustar si es necesario */
+}
+
+
+body.dark-mode aside.activity-list a:hover {
+    background-color: var(--primary-color); 
+}
+
+body.dark-mode .sidebar-info {
+   color: #ccc;
+}
+
+body.dark-mode .activity-card > p { 
+    color: #bbb; 
+}
+
+body.dark-mode .step-card p { 
+    color: #ccc;
+}
+
+body.dark-mode #toggle-dialogues {
+    background-color: var(--dark-primary-color);
+}
+
+body.dark-mode .timer-container {
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .timer-container button {
+    background-color: var(--secondary-color); 
+    color: var(--text-color);
+}
+
+body.dark-mode .timer-container button:hover {
+    background-color: #b2dfdb;
+}
+
+/* Dark Mode para "De un Vistazo" */
+body.dark-mode .overview-subtitle {
+    color: #bbb;
+}
+
+body.dark-mode .overview-table-container th,
+body.dark-mode .overview-table-container td {
+    border-color: #ccc; /* LÍNEAS DE TABLA EN MODO OSCURO */
+}
+
+body.dark-mode .overview-table-container th {
+    background-color: var(--dark-secondary-color); 
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .overview-table-container td > strong { 
+    color: #66d9ef; 
+}
+
+body.dark-mode .overview-table-container .tactic-highlight strong {
+    color: #ff7979; 
+}
+
+body.dark-mode .overview-table-container a {
+    color: #66d9ef; 
+}
+
+
+/* MEDIA QUERY FOR DESKTOP (or larger tablets) */
+@media (min-width: 768px) {
+    /* HEADER - Desktop Layout */
+    header {
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: center; 
+    }
+
+    header h1 {
+        justify-content: flex-start; 
+        width: auto; 
+    }
+
+    .header-widgets {
+        flex-direction: row; 
+        width: auto; 
+        justify-content: flex-end; 
+    }
+
+    /* MAIN LAYOUT - Desktop Layout: Sidebar y Content lado a lado */
+    .main-container {
+        flex-direction: row;
+    }
+
+    /* ASIDE (Activity List) - Desktop Layout */
+    aside.activity-list {
+        width: 200px; 
+        border-right: 1px solid var(--light-gray); 
+        border-bottom: none; 
+        padding: 1rem; 
+    }
+
+    aside.activity-list h2 {
+        text-align: left; 
+    }
+
+    aside.activity-list ul {
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 0; 
+    }
+
+    aside.activity-list li {
+        margin-bottom: 0.75rem; 
+    }
+
+    .sidebar-info p {
+        text-align: left; 
+    }
+
+    /* Toggle Dialogues Button - Desktop Layout */
+    #toggle-dialogues {
+        margin-left: 0; 
+        margin-right: auto; 
+        width: auto; 
+    }
+
+    /* Step Cards - Two column grid layout for steps */
+    .step-card {
+        grid-template-columns: 1fr 1fr; 
+        gap: 1rem; 
+    }
+
+    .step-content {
+        margin-bottom: 0rem; 
+    }
+
+    .collapsible-button {
+        margin: 0 auto;
+        display: block;
+    }
+    .overview-table-container {
+        /* No specific changes for desktop unless the table is too cramped */
+    }
+}
+
+/* Responsive para la tabla de "De un Vistazo" en móviles (si se quiere apilar) */
+@media (max-width: 600px) { 
+    .overview-table-container table,
+    .overview-table-container thead,
+    .overview-table-container tbody,
+    .overview-table-container th,
+    .overview-table-container td,
+    .overview-table-container tr {
+        display: block;
+    }
+
+    .overview-table-container thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px; 
+    }
+
+    .overview-table-container tr {
+        margin-bottom: 1rem;
+        border: 1px solid var(--light-gray);
+        border-radius: 4px;
+    }
+    body.dark-mode .overview-table-container tr {
+        border-color: #ccc; /* LÍNEAS DE TABLA (TR) EN MODO OSCURO - VISTA APILADA */
+    }
+
+
+    .overview-table-container td {
+        border: none;
+        border-bottom: 1px solid var(--secondary-color); 
+        position: relative;
+        padding-left: 50%; 
+        text-align: left;
+    }
+    body.dark-mode .overview-table-container td {
+        border-bottom-color: #555; /* SEPARADOR INTERNO EN MODO OSCURO - VISTA APILADA */
+    }
+
+
+    .overview-table-container td:before {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+    body.dark-mode .overview-table-container td:before {
+        color: #66d9ef;
+    }
+
+    .overview-table-container td:nth-of-type(1):before { content: "Objetivos, Tácticas, Entregable"; }
+    .overview-table-container td:nth-of-type(2):before { content: "Materiales y Preparación"; }
+}
