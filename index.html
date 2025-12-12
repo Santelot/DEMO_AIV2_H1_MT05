@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playbook-B1-TM5</title>
+    <title>Playbook: Misión 5 - 1º Preparatoria</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
@@ -13,7 +13,7 @@
         <h1><span class="book-icon">📋</span> <strong>Playbook: Misión 5 - 1º Preparatoria</strong></h1>
         <div class="header-widgets">
             <div class="timer-container">
-                <!-- IDs corregidos para coincidir con script.js -->
+                <!-- IMPORTANTE: IDs corregidos para coincidir con script.js -->
                 <span id="timer">⏱️ 40:00</span>
                 <button id="startStop">Start</button>
                 <button id="reset">Reset</button>
@@ -40,15 +40,12 @@
                 <li><a href="#activity-4">4</a></li>
                 <li><a href="#activity-5">5</a></li>
             </ul>
-            <div class="sidebar-info">
-                <p>Misión 5: Análisis 360°</p>
-            </div>
         </aside>
 
         <main class="content">
-            <!-- Botón requerido por script.js para alternar diálogos -->
-            <button id="toggle-dialogues">Ocultar todos los diálogos</button>
-            
+            <!-- IMPORTANTE: Este botón es requerido por script.js. Si falta, el JS falla y rompe el diseño. -->
+            <button id="toggle-dialogues" style="margin-bottom: 1rem;">Ocultar todos los diálogos</button>
+
             <div class="progress-bar">
                 <div class="progress"></div>
             </div>
@@ -57,14 +54,12 @@
             <div class="activity-card" id="activity-0">
                 <h2><span class="book-icon">📝</span> De un Vistazo: Comando Central</h2>
                 <p class="overview-subtitle">Todo lo que necesitas para preparar y ejecutar esta misión en minutos.</p>
-                
                 <div class="command-section">
                     <h3>🎯 Objetivo de Aprendizaje</h3>
                     <div class="objective-box">
                         <p><strong>Los estudiantes podrán:</strong> diseñar prompts con Rol Prompt para dirigir un panel de 2-3 expertos virtuales, comparar sus perspectivas sobre un tema y comprender cómo el análisis multifacético revela sesgos y trade-offs.</p>
                     </div>
                 </div>
-
                 <div class="command-section xolo-prompt">
                     <h3>🤖 Prompt Principal de XOLO</h3>
                     <div class="prompt-box">
@@ -77,7 +72,6 @@
                         <pre id="main-prompt">Mi perfil es [perfil], explícame Rol Prompt y cómo crear un 'Panel de Expertos' en un solo prompt. Luego ayúdame a armar un panel de 2-3 roles opuestos sobre [tema].</pre>
                     </div>
                 </div>
-
                 <div class="command-section">
                     <h3>⚡ Puntos Esenciales de la Misión</h3>
                     <div class="essentials-grid">
@@ -103,7 +97,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="command-section">
                     <h3>📦 Checklist de Materiales</h3>
                     <div class="materials-checklist">
@@ -119,7 +112,6 @@
                         <p><strong>🛡️ Cuidado del equipo:</strong> Recuerda: cuidar laptops/tablets (cargar batería, no jalar cables, evitar líquidos) y no escribir datos personales sensibles en prompts.</p>
                     </div>
                 </div>
-
                 <div class="command-section">
                     <h3>🗓️ Secuencia de la Misión (40 min)</h3>
                     <div class="timeline">
@@ -160,7 +152,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="command-section troubleshooting">
                     <h3>🚨 Resolución Rápida de Problemas</h3>
                     <div class="troubleshooting-box">
@@ -184,7 +175,6 @@
                         <button class="timer-start-btn" data-duration="120">Iniciar</button>
                     </div>
                 </div>
-                
                 <div class="roles-section">
                     <div class="role-card role-teacher">
                         <h4>👨‍🏫 Rol del Maestro</h4>
@@ -211,7 +201,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="slide-reference">
                     <h4>📊 Diapositiva 1: Misión Visual</h4>
                     <div class="slide-content">
@@ -232,7 +221,6 @@
                         <button class="timer-start-btn" data-duration="480">Iniciar</button>
                     </div>
                 </div>
-
                 <div class="roles-section">
                     <div class="role-card role-teacher">
                         <h4>👨‍🏫 Rol del Maestro</h4>
@@ -261,7 +249,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="slide-reference">
                     <h4>📊 Diapositiva 2: A.I. GYM</h4>
                     <div class="slide-content">
@@ -272,7 +259,6 @@
                         <p class="highlight-text" style="margin-top: 1rem;">🎯 Objetivo: Aprender a dirigir un Panel de Expertos y reconocer sesgos y trade-offs.</p>
                     </div>
                 </div>
-
                 <div class="optional-script">
                     <button class="collapsible-button">📖 Ver guion detallado (opcional)</button>
                     <div class="collapsible-content">
@@ -290,7 +276,6 @@
                         <button class="timer-start-btn" data-duration="1200">Iniciar</button>
                     </div>
                 </div>
-
                 <div class="roles-section">
                     <div class="role-card role-teacher">
                         <h4>👨‍🏫 Rol del Maestro</h4>
@@ -320,7 +305,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="slide-reference">
                     <h4>📊 Diapositiva 3: Brain Spark</h4>
                     <div class="slide-content">
@@ -338,14 +322,12 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="optional-script">
                     <button class="collapsible-button">📖 Ver guion detallado (opcional)</button>
                     <div class="collapsible-content">
                         <p class="dialogue assistant">¡Es hora de crear! El flujo es simple: elijan un tema → pidan a XOLO un Panel de Expertos → definan un VIBE de lo que van a producir → conviértanlo en un GCS con roles, comparativa y síntesis. Luego hagan un entregable claro: una tabla o bullets comparando argumentos y una conclusión final que no sea “opinión”, sino trade-offs. Ejemplo: “¿Deberían prohibirse los celulares en el aula?” con roles opuestos y una síntesis que diga qué se gana y qué se pierde. Usen las preguntas de experimentación para iterar. Si tienen errores o dudas, pregúntenle a XOLO, él los ayudará a depurar.</p>
                     </div>
                 </div>
-
                 <div class="challenge-prompt">
                     <h4>🚀 Prompt de Desafío (para quienes terminen rápido)</h4>
                     <div class="prompt-box">
@@ -364,7 +346,6 @@
                         <button class="timer-start-btn" data-duration="300">Iniciar</button>
                     </div>
                 </div>
-
                 <div class="roles-section">
                     <div class="role-card role-teacher">
                         <h4>👨‍🏫 Rol del Maestro</h4>
@@ -392,7 +373,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="slide-reference">
                     <h4>📊 Diapositiva 4: Think-Pair-Share</h4>
                     <div class="slide-content tps-structure">
@@ -422,7 +402,6 @@
                         <button class="timer-start-btn" data-duration="300">Iniciar</button>
                     </div>
                 </div>
-
                 <div class="roles-section">
                     <div class="role-card role-teacher">
                         <h4>👨‍🏫 Rol del Maestro</h4>
@@ -450,7 +429,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="slide-reference">
                     <h4>📊 Diapositiva 5: ¡Misión Cumplida!</h4>
                     <div class="slide-content">
@@ -463,7 +441,6 @@
                     </div>
                 </div>
             </div>
-
         </main>
     </div>
 
