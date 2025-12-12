@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playbook: Misión 5 - 1º Preparatoria</title>
+    <title>Playbook-B1-TM5</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <h1><span class="book-icon">📋</span> <strong>Playbook: Misión 5 - 1º Preparatoria</strong></h1>
         <div class="header-widgets">
             <div class="timer-container">
-                <!-- IMPORTANTE: IDs corregidos para coincidir con script.js -->
-                <span id="timer">⏱️ 40:00</span>
-                <button id="startStop">Start</button>
-                <button id="reset">Reset</button>
+                <span id="global-timer">⏱️ 40:00</span>
+                <button id="global-start-stop">Start</button>
+                <button id="global-reset">Reset</button>
             </div>
             <div class="theme-toggle">
                 <i class="fas fa-sun"></i>
@@ -40,12 +40,10 @@
                 <li><a href="#activity-4">4</a></li>
                 <li><a href="#activity-5">5</a></li>
             </ul>
+
         </aside>
 
         <main class="content">
-            <!-- IMPORTANTE: Este botón es requerido por script.js. Si falta, el JS falla y rompe el diseño. -->
-            <button id="toggle-dialogues" style="margin-bottom: 1rem;">Ocultar todos los diálogos</button>
-
             <div class="progress-bar">
                 <div class="progress"></div>
             </div>
@@ -54,12 +52,14 @@
             <div class="activity-card" id="activity-0">
                 <h2><span class="book-icon">📝</span> De un Vistazo: Comando Central</h2>
                 <p class="overview-subtitle">Todo lo que necesitas para preparar y ejecutar esta misión en minutos.</p>
+                
                 <div class="command-section">
                     <h3>🎯 Objetivo de Aprendizaje</h3>
                     <div class="objective-box">
                         <p><strong>Los estudiantes podrán:</strong> diseñar prompts con Rol Prompt para dirigir un panel de 2-3 expertos virtuales, comparar sus perspectivas sobre un tema y comprender cómo el análisis multifacético revela sesgos y trade-offs.</p>
                     </div>
                 </div>
+
                 <div class="command-section xolo-prompt">
                     <h3>🤖 Prompt Principal de XOLO</h3>
                     <div class="prompt-box">
@@ -72,13 +72,14 @@
                         <pre id="main-prompt">Mi perfil es [perfil], explícame Rol Prompt y cómo crear un 'Panel de Expertos' en un solo prompt. Luego ayúdame a armar un panel de 2-3 roles opuestos sobre [tema].</pre>
                     </div>
                 </div>
+
                 <div class="command-section">
                     <h3>⚡ Puntos Esenciales de la Misión</h3>
                     <div class="essentials-grid">
                         <div class="essential-card">
                             <div class="essential-icon">🎓</div>
                             <h4>Concepto Clave</h4>
-                            <p>Análisis multifacético: ver un tema desde varias “lentes” para tomar decisiones más sólidas y no quedarte con una sola versión.</p>
+                            <p>Análisis multifacético: ver un tema desde varias "lentes" para tomar decisiones más sólidas y no quedarte con una sola versión.</p>
                         </div>
                         <div class="essential-card">
                             <div class="essential-icon">🔧</div>
@@ -97,6 +98,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="command-section">
                     <h3>📦 Checklist de Materiales</h3>
                     <div class="materials-checklist">
@@ -107,59 +109,65 @@
                         <label><input type="checkbox"> Plantilla simple de comparativa: Roles - Argumentos - Trade-offs - Síntesis</label>
                         <label><input type="checkbox"> ⚠️ Esta misión usa prompts y análisis (que se pueden probar en cualquier LLM)</label>
                         <label><input type="checkbox"> 📋 No se usan extensiones en esta misión</label>
-                    </div>
-                    <div class="materials-note">
-                        <p><strong>🛡️ Cuidado del equipo:</strong> Recuerda: cuidar laptops/tablets (cargar batería, no jalar cables, evitar líquidos) y no escribir datos personales sensibles en prompts.</p>
+                        <label><input type="checkbox"> 🛡️ Recuerda: cuidar laptops/tablets (cargar batería, no jalar cables, evitar líquidos)</label>
+                        <label><input type="checkbox"> 🛡️ No escribir datos personales sensibles en prompts</label>
                     </div>
                 </div>
+
                 <div class="command-section">
                     <h3>🗓️ Secuencia de la Misión (40 min)</h3>
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-dot">1</div>
                             <div class="timeline-content">
-                                <strong>Saludo + Contexto</strong> <span class="time-badge">2 min</span>
+                                <strong>Saludo + Contexto</strong>
+                                <span class="time-badge">2 min</span>
                                 <p>Bienvenida, ingreso a Gnius Space y motivación inicial.</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-dot">2</div>
                             <div class="timeline-content">
-                                <strong>A.I. Gym</strong> <span class="time-badge">8 min</span>
+                                <strong>A.I. Gym</strong>
+                                <span class="time-badge">8 min</span>
                                 <p>XOLO explica Rol Prompt, paneles de expertos, sesgos y trade-offs.</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-dot">3</div>
                             <div class="timeline-content">
-                                <strong>Brain Spark</strong> <span class="time-badge">20 min</span>
+                                <strong>Brain Spark</strong>
+                                <span class="time-badge">20 min</span>
                                 <p>Idear, construir y experimentar un programa con XOLO.</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-dot">4</div>
                             <div class="timeline-content">
-                                <strong>Gnius STORM - Compartir</strong> <span class="time-badge">5 min</span>
+                                <strong>Gnius STORM - Compartir</strong>
+                                <span class="time-badge">5 min</span>
                                 <p>Demostración y reflexión en parejas.</p>
                             </div>
                         </div>
-                        <div class="timeline-item">
+                         <div class="timeline-item">
                             <div class="timeline-dot">5</div>
                             <div class="timeline-content">
-                                <strong>Entrega de Evidencias</strong> <span class="time-badge">5 min</span>
+                                <strong>Entrega de Evidencias</strong>
+                                <span class="time-badge">5 min</span>
                                 <p>Subir capturas a Gnius Space y finalizar misión.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="command-section troubleshooting">
+
+                <div class="command-section">
                     <h3>🚨 Resolución Rápida de Problemas</h3>
-                    <div class="troubleshooting-box">
+                    <div class="objective-box">
                         <ul>
                             <li><strong>Si los alumnos no pueden ingresar a Gnius Space:</strong> Activa XOLO SOS en <a href="https://xolo.gnius.club" target="_blank">xolo.gnius.club</a> para continuar la misión sin interrumpir la clase.</li>
-                            <li><strong>Si XOLO responde muy genérico:</strong> Pide que definan roles con objetivo, interés y “qué defendería” cada rol. Luego exijan salida en comparativa + síntesis.</li>
-                            <li><strong>Si el panel se vuelve demasiado largo:</strong> Limiten a 2-3 roles y pidan “máximo 5 bullets por rol” + una síntesis de 6-8 líneas.</li>
-                            <li><strong>Si no aparece el análisis de trade-offs:</strong> Pidan explícitamente: “marca trade-offs y qué sacrifica cada postura”.</li>
+                            <li><strong>Si XOLO responde muy genérico:</strong> Pide que definan roles con objetivo, interés y "qué defendería" cada rol. Luego exijan salida en comparativa + síntesis.</li>
+                            <li><strong>Si el panel se vuelve demasiado largo:</strong> Limiten a 2-3 roles y pidan "máximo 5 bullets por rol" + una síntesis de 6-8 líneas.</li>
+                            <li><strong>Si no aparece el análisis de trade-offs:</strong> Pidan explícitamente: "marca trade-offs y qué sacrifica cada postura".</li>
                             <li><strong>Si hay errores o dudas en el prompt:</strong> Recordar a los estudiantes que XOLO puede ayudar a depurar. Pídeles que copien el prompt y el resultado y se lo muestren a XOLO.</li>
                         </ul>
                     </div>
@@ -175,6 +183,7 @@
                         <button class="timer-start-btn" data-duration="120">Iniciar</button>
                     </div>
                 </div>
+
                 <div class="roles-section">
                     <div class="role-card role-teacher">
                         <h4>👨‍🏫 Rol del Maestro</h4>
@@ -187,7 +196,6 @@
                     </div>
                     <div class="role-card role-xolo">
                         <h4>🤖 Rol de XOLO</h4>
-                        <p class="xolo-status standby">⏸️ XOLO EN ESPERA</p>
                         <ul>
                             <li>Los estudiantes lo activarán en la siguiente actividad.</li>
                         </ul>
@@ -201,6 +209,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="slide-reference">
                     <h4>📊 Diapositiva 1: Misión Visual</h4>
                     <div class="slide-content">
@@ -221,6 +230,7 @@
                         <button class="timer-start-btn" data-duration="480">Iniciar</button>
                     </div>
                 </div>
+
                 <div class="roles-section">
                     <div class="role-card role-teacher">
                         <h4>👨‍🏫 Rol del Maestro</h4>
@@ -233,7 +243,6 @@
                     </div>
                     <div class="role-card role-xolo">
                         <h4>🤖 Rol de XOLO</h4>
-                        <p class="xolo-status active">✅ XOLO ACTIVO</p>
                         <ul>
                             <li>Explica cómo definir roles con intereses distintos para obtener perspectivas realmente diferentes.</li>
                             <li>Introduce el concepto de análisis multifacético y cómo detectar sesgos y trade-offs entre posturas.</li>
@@ -249,20 +258,22 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="slide-reference">
                     <h4>📊 Diapositiva 2: A.I. GYM</h4>
                     <div class="slide-content">
                         <p><strong>💬 Escribe este prompt en el chat de XOLO:</strong></p>
                         <div class="prompt-box">
-                            <pre>"Mi perfil es [perfil], explícame Rol Prompt y cómo crear un 'Panel de Expertos' en un solo prompt. Luego ayúdame a armar un panel de 2-3 roles opuestos sobre [tema]."</pre>
+                           <pre>"Mi perfil es [perfil], explícame Rol Prompt y cómo crear un 'Panel de Expertos' en un solo prompt. Luego ayúdame a armar un panel de 2-3 roles opuestos sobre [tema]."</pre>
                         </div>
                         <p class="highlight-text" style="margin-top: 1rem;">🎯 Objetivo: Aprender a dirigir un Panel de Expertos y reconocer sesgos y trade-offs.</p>
                     </div>
                 </div>
+                
                 <div class="optional-script">
                     <button class="collapsible-button">📖 Ver guion detallado (opcional)</button>
                     <div class="collapsible-content">
-                        <p class="dialogue assistant">Ahora vamos a aprender Rol Prompt y cómo dirigir un Panel de Expertos en un solo prompt. Abran XOLO en Gnius Space y escriban el prompt de la pantalla. La meta es obtener 2 o 3 perspectivas opuestas sobre un mismo tema, para analizarlo en 360°. Mientras XOLO responde, vayan afinando: que cada rol tenga interés, objetivo y postura clara, y que la salida incluya comparativa y síntesis. Aquí lo importante es detectar sesgos y trade-offs, no “tener la razón”. Si algo no quedó claro, pueden preguntarle de nuevo a XOLO, él siempre está disponible para explicar de otra manera.</p>
+                        <p class="dialogue assistant">Ahora vamos a aprender Rol Prompt y cómo dirigir un Panel de Expertos en un solo prompt. Abran XOLO en Gnius Space y escriban el prompt de la pantalla. La meta es obtener 2 o 3 perspectivas opuestas sobre un mismo tema, para analizarlo en 360°. Mientras XOLO responde, vayan afinando: que cada rol tenga interés, objetivo y postura clara, y que la salida incluya comparativa y síntesis. Aquí lo importante es detectar sesgos y trade-offs, no "tener la razón". Si algo no quedó claro, pueden preguntarle de nuevo a XOLO, él siempre está disponible para explicar de otra manera.</p>
                     </div>
                 </div>
             </div>
@@ -276,6 +287,7 @@
                         <button class="timer-start-btn" data-duration="1200">Iniciar</button>
                     </div>
                 </div>
+
                 <div class="roles-section">
                     <div class="role-card role-teacher">
                         <h4>👨‍🏫 Rol del Maestro</h4>
@@ -288,7 +300,6 @@
                     </div>
                     <div class="role-card role-xolo">
                         <h4>🤖 Rol de XOLO</h4>
-                        <p class="xolo-status active">✅ XOLO ACTIVO</p>
                         <ul>
                             <li>Ayuda a desarrollar una idea y un VIBE que aplique un Panel de Expertos con roles opuestos.</li>
                             <li>Entrega el GCS de la idea del genio.</li>
@@ -305,12 +316,13 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="slide-reference">
                     <h4>📊 Diapositiva 3: Brain Spark</h4>
                     <div class="slide-content">
                         <p><strong>1. 💬 Pide a XOLO que te ayude a crear:</strong></p>
                         <div class="prompt-box">
-                            <pre>"Xolo, ayúdame a dirigir un Panel de Expertos sobre [tema], un VIBE (qué voy a crear con eso) y después conviértelo en un GCS (roles + comparativa + síntesis)."</pre>
+                           <pre>"Xolo, ayúdame a dirigir un Panel de Expertos sobre [tema], un VIBE (qué voy a crear con eso) y después conviértelo en un GCS (roles + comparativa + síntesis)."</pre>
                         </div>
                         <p style="margin-top: 1.5rem;"><strong>2. 🔬 Experimenta y descubre con tu programa:</strong></p>
                         <ul>
@@ -322,12 +334,14 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="optional-script">
                     <button class="collapsible-button">📖 Ver guion detallado (opcional)</button>
                     <div class="collapsible-content">
-                        <p class="dialogue assistant">¡Es hora de crear! El flujo es simple: elijan un tema → pidan a XOLO un Panel de Expertos → definan un VIBE de lo que van a producir → conviértanlo en un GCS con roles, comparativa y síntesis. Luego hagan un entregable claro: una tabla o bullets comparando argumentos y una conclusión final que no sea “opinión”, sino trade-offs. Ejemplo: “¿Deberían prohibirse los celulares en el aula?” con roles opuestos y una síntesis que diga qué se gana y qué se pierde. Usen las preguntas de experimentación para iterar. Si tienen errores o dudas, pregúntenle a XOLO, él los ayudará a depurar.</p>
+                        <p class="dialogue assistant">¡Es hora de crear! El flujo es simple: elijan un tema → pidan a XOLO un Panel de Expertos → definan un VIBE de lo que van a producir → conviértanlo en un GCS con roles, comparativa y síntesis. Luego hagan un entregable claro: una tabla o bullets comparando argumentos y una conclusión final que no sea "opinión", sino trade-offs. Ejemplo: "¿Deberían prohibirse los celulares en el aula?" con roles opuestos y una síntesis que diga qué se gana y qué se pierde. Usen las preguntas de experimentación para iterar. Si tienen errores o dudas, pregúntenle a XOLO, él los ayudará a depurar.</p>
                     </div>
                 </div>
+
                 <div class="challenge-prompt">
                     <h4>🚀 Prompt de Desafío (para quienes terminen rápido)</h4>
                     <div class="prompt-box">
@@ -346,6 +360,7 @@
                         <button class="timer-start-btn" data-duration="300">Iniciar</button>
                     </div>
                 </div>
+
                 <div class="roles-section">
                     <div class="role-card role-teacher">
                         <h4>👨‍🏫 Rol del Maestro</h4>
@@ -358,7 +373,6 @@
                     </div>
                     <div class="role-card role-xolo">
                         <h4>🤖 Rol de XOLO</h4>
-                        <p class="xolo-status standby">⏸️ XOLO EN ESPERA</p>
                         <ul>
                             <li>Disponible solo si hay dudas finales urgentes.</li>
                         </ul>
@@ -373,10 +387,11 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="slide-reference">
                     <h4>📊 Diapositiva 4: Think-Pair-Share</h4>
                     <div class="slide-content tps-structure">
-                        <div class="tps-phase">
+                         <div class="tps-phase">
                             <h4>🤔 THINK (30 seg)</h4>
                             <p>Reflexión individual: ¿Qué rol mejoró más tu análisis? ¿Qué te sorprendió?</p>
                         </div>
@@ -402,6 +417,7 @@
                         <button class="timer-start-btn" data-duration="300">Iniciar</button>
                     </div>
                 </div>
+
                 <div class="roles-section">
                     <div class="role-card role-teacher">
                         <h4>👨‍🏫 Rol del Maestro</h4>
@@ -414,7 +430,6 @@
                     </div>
                     <div class="role-card role-xolo">
                         <h4>🤖 Rol de XOLO</h4>
-                        <p class="xolo-status inactive">⭕ XOLO FINALIZADO</p>
                         <ul>
                             <li>La interacción con XOLO ha terminado para esta misión.</li>
                         </ul>
@@ -429,6 +444,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="slide-reference">
                     <h4>📊 Diapositiva 5: ¡Misión Cumplida!</h4>
                     <div class="slide-content">
@@ -441,21 +457,10 @@
                     </div>
                 </div>
             </div>
+
         </main>
     </div>
 
-    <!-- Script Inline para función Copy Prompt (no incluida en el script.js externo) -->
-    <script>
-        function copyPrompt(elementId) {
-            const promptText = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(promptText).then(() => {
-                alert("¡Prompt copiado al portapapeles!");
-            }).catch(err => {
-                console.error("Error al copiar: ", err);
-            });
-        }
-    </script>
-    
     <script src="script.js"></script>
 </body>
 </html>
